@@ -1,4 +1,4 @@
-package com.busanit501.leejj_server_project2.todo;
+package com.busanit501.leejj_server_project2.todo_1;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,13 +21,13 @@ public class _1_TodoListController extends HttpServlet {
         System.out.println("서버가 일을 하고 있다. 조금 있다 화면을 웹브라우저에게 던져준다. ");
         System.out.println("/todo/list, get으로 요청 처리함. ");
 
-        List<_3_TodoDTO> dtoList = _4_TodoService.INSTANCE.getList();
+        List<_2_TodoDTO> dtoList = _4_TodoService.INSTANCE.getList();
 
         req.setAttribute("list", dtoList);
 
 
         // 한줄로 표현한 내용.
-        req.getRequestDispatcher("/WEB-INF/_0130_todo/list.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/_0202_todo_1/list.jsp").forward(req,resp);
 
 
     }

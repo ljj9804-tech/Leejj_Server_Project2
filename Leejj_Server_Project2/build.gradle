@@ -26,9 +26,13 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
     //외부기능_추가_1
     //추가,업데이트 실행 후 외부 라이브러리 추가되는거 확인하기
     implementation group: 'jstl', name: 'jstl', version: '1.2'
+
+    //마리아db 연결 도구 설치
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.5.3'
 }
 
 test {

@@ -1,8 +1,8 @@
-package com.busanit501.leejj_server_project2.todo;
+package com.busanit501.leejj_server_project2.todo_2;
 
 import java.time.LocalDate;
 
-public class _3_TodoDTO {
+public class _3_MenuDTO {
     private Long tno;
     private String title;
     private LocalDate dueDate;
@@ -50,7 +50,7 @@ public class _3_TodoDTO {
 
     @Override
     public String toString() {
-        return "_3_TodoDTO{" +
+        return "_3_MenuDTO{" +
                 "tno=" + tno +
                 ", title='" + title + '\'' +
                 ", dueDate=" + dueDate +
