@@ -13,7 +13,7 @@ import java.util.List;
 
 
 //순서2, 서블릿 라우팅 경로 및 이름 설정, 고정, 이름과 경로는 동적(변경이됨)
-@WebServlet(name="_1_todoListController_0202", urlPatterns = "/todo/list_0202")
+@WebServlet(name="_1_todoListController_0202_3", urlPatterns = "/todo/list_0202_3")
 //순서1 , 클래스 생성 후, 상속 받기, 고정.
 public class _1_TodoListController extends HttpServlet {
 //    화면제공 목적
