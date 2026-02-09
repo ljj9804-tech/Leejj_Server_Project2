@@ -1,3 +1,9 @@
 11:47:59.539 [Test worker] INFO  com.busanit501.leejj_server_project2.service._0204_6_TodoServiceTests-로그 라이브러리 logd4j2 기능 테스트 
 11:47:59.543 [Test worker] INFO  com.busanit501.leejj_server_project2.service._0204_6_TodoServiceTests-_0204_1_TodoDTO(tno=null, title=샘플 제목, 오늘 점심 뭐 먹지?, dueDate=2026-02-04, finished=true)
 11:47:59.564 [Test worker] INFO  com.busanit501.leejj_server_project2._0204_todo.service._0204_4_TodoService-_0204_4_TodoService에서 register 작업중, 변환 결과 확인 todoVO : _0204_2_TodoVO(tno=null, title=샘플 제목, 오늘 점심 뭐 먹지?, dueDate=2026-02-04, finished=true)
+10:47:31.001 [Test worker] INFO  com.busanit501.leejj_server_project2.dao._0209_20_MemberDAOTests-임시 로그인, 유저 조회 결과 : _0209_17_MemberVO(mid=ljj1, mpw=1234, mname=이진주1)
+10:47:50.187 [Test worker] INFO  com.busanit501.leejj_server_project2.service._0209_22_MemberServiceTests-멤버 서비스 로그인 테스트 memberDTO: _0209_18_MemberDTO(mid=ljj1, mpw=1234, mname=이진주1)
+10:50:54.196 [Test worker] INFO  com.busanit501.leejj_server_project2.dao._0209_20_MemberDAOTests-임시 로그인, 유저 조회 결과 : _0209_17_MemberVO(mid=ljj1, mpw=1234, mname=이진주1)
+11:05:07.151 [Test worker] INFO  com.busanit501.leejj_server_project2.dao._0209_20_MemberDAOTests-임시 로그인, 유저 조회 결과 : _0209_17_MemberVO(mid=ljj1, mpw=1234, mname=이진주1)
+15:44:55.785 [Test worker] INFO  com.busanit501.leejj_server_project2.dao._0209_20_MemberDAOTests-uuid 이용해서 조회, 임시 로그인, 유저 조회 결과2 : _0209_17_MemberVO(mid=ljj1, mpw=1234, mname=이진주1, uuid=8e046371-70f1-485a-b110-e571071c0143)
+15:47:15.993 [Test worker] INFO  com.busanit501.leejj_server_project2.service._0209_22_MemberServiceTests-uuid 를 이용한 조회 멤버 서비스 로그인 테스트2 memberDTO: _0209_18_MemberDTO(mid=ljj1, mpw=1234, mname=이진주1, uuid=8e046371-70f1-485a-b110-e571071c0143)
