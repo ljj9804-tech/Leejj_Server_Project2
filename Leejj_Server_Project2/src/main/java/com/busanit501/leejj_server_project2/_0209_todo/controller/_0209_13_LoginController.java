@@ -63,7 +63,7 @@ public class _0209_13_LoginController extends HttpServlet {
             HttpSession session = req.getSession();
             session.setAttribute("loginInfo", memberDTO);
             resp.sendRedirect("/todo/list_0209");
-        } catch (Exception e) {
+            } catch (Exception e) {
             resp.sendRedirect("/login_0209?result=error");
         }
 

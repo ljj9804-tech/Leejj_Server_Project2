@@ -7,3 +7,16 @@
 11:05:07.151 [Test worker] INFO  com.busanit501.leejj_server_project2.dao._0209_20_MemberDAOTests-임시 로그인, 유저 조회 결과 : _0209_17_MemberVO(mid=ljj1, mpw=1234, mname=이진주1)
 15:44:55.785 [Test worker] INFO  com.busanit501.leejj_server_project2.dao._0209_20_MemberDAOTests-uuid 이용해서 조회, 임시 로그인, 유저 조회 결과2 : _0209_17_MemberVO(mid=ljj1, mpw=1234, mname=이진주1, uuid=8e046371-70f1-485a-b110-e571071c0143)
 15:47:15.993 [Test worker] INFO  com.busanit501.leejj_server_project2.service._0209_22_MemberServiceTests-uuid 를 이용한 조회 멤버 서비스 로그인 테스트2 memberDTO: _0209_18_MemberDTO(mid=ljj1, mpw=1234, mname=이진주1, uuid=8e046371-70f1-485a-b110-e571071c0143)
+11:06:52.961 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기,com.busanit501.leejj_server_project2.springex_0212.sample._2_SampleService_0212@7068f7ca
+11:34:54.751 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기,com.busanit501.leejj_server_project2.springex_0212.sample._2_SampleService_0212@4632cfc
+12:47:15.315 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기,_2_SampleService_0212(sampleDAO0212=com.busanit501.leejj_server_project2.springex_0212.sample._1_SampleDAO_0212@652ce654)
+14:36:00.707 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기,_2_SampleService_0212(sampleDAO0212=com.busanit501.leejj_server_project2.springex_0212.sample._1_SampleDAO_0212@17d2ed1b)
+14:36:17.831 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기,_2_SampleService_0212(sampleDAO0212=com.busanit501.leejj_server_project2.springex_0212.sample._1_SampleDAO_0212@522ba524)
+14:37:24.098 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기,_2_SampleService_0212(sampleDAO0212=com.busanit501.leejj_server_project2.springex_0212.sample._1_SampleDAO_0212@29c5ee1d)
+14:45:59.264 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기,_2_SampleService_0212(sampleDAO0212=com.busanit501.leejj_server_project2.springex_0212.sample._4_EventSampleDAOImpl_0212@185f7840)
+14:51:16.001 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기,_2_SampleService_0212(sampleDAO0212=com.busanit501.leejj_server_project2.springex_0212.sample._4_EventSampleDAOImpl_0212@185f7840)
+15:03:43.845 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-실제 객체가 활성화가 되었는지 여부를 객체를 조회해보기,_2_SampleService_0212(sampleDAO0212=com.busanit501.leejj_server_project2.springex_0212.sample._3_SampleDAOImp1_0212@656d10a4)
+15:41:04.030 [Test worker] INFO  com.busanit501.leejj_server_project2.sample.SampleTests-testConnection : HikariProxyConnection@69160933 wrapping org.mariadb.jdbc.Connection@4f966719
+16:39:16.532 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TimeMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-12 16:39:19
+11:13:32.971 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TimeMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-13 11:13:36
+11:36:42.444 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TimeMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-13 11:36:47
