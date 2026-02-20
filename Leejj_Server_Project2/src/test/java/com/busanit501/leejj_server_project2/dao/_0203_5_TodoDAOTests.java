@@ -1,4 +1,4 @@
-package com.busanit501.leejj_server_project2;
+package com.busanit501.leejj_server_project2.dao;
 
 import com.busanit501.leejj_server_project2._0203_todo.dao._0203_4_TodoDAO;
 import com.busanit501.leejj_server_project2._0203_todo.domain._0203_1_TodoVO;

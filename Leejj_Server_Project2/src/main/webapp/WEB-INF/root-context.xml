@@ -62,5 +62,7 @@
 
     <context:component-scan base-package="com.busanit501.leejj_server_project2.springex_new_0219_keep.config"/>
 
+    <context:component-scan base-package="com.busanit501.leejj_server_project2.springex_new_0219_keep.service"/>
+
 
 </beans>

@@ -1,5 +1,6 @@
 package com.busanit501.leejj_server_project2.service;
 
+
 import com.busanit501.leejj_server_project2._0204_todo.dto._0204_1_TodoDTO;
 import com.busanit501.leejj_server_project2._0204_todo.service._0204_4_TodoService;
 import lombok.extern.log4j.Log4j2;
@@ -38,13 +39,8 @@ public class _0204_6_TodoServiceTests {
 
         log.info("로그 라이브러리 logd4j2 기능 테스트 ");
         log.info(todoDTO);
-
         todoService.register(todoDTO);
 
-
-
     }
-
-
 
 }

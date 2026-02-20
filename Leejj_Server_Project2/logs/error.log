@@ -21,3 +21,10 @@
 11:13:32.971 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TimeMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-13 11:13:36
 11:36:42.444 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TimeMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-13 11:36:47
 16:35:32.597 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-19 16:35:32
+10:24:01.103 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-20 10:24:01
+10:25:09.381 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-20 10:25:09
+10:26:10.177 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-20 10:26:10
+10:28:36.467 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-20 10:28:36
+10:30:46.119 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-20 10:30:46
+11:40:01.924 [Test worker] INFO  com.busanit501.leejj_server_project2.springex_new_0219_keep.service.TodoServiceImpl-서비스 작업: insert 기능 작업중. 
+11:40:01.947 [Test worker] INFO  com.busanit501.leejj_server_project2.springex_new_0219_keep.service.TodoServiceImpl-서비스 작업: insert 기능 변환된 todoVO : TodoVO(tno=null, title=오늘 점심 뭐 먹죠2?, dueDate=2026-02-20, finished=false, writer=이상용2)

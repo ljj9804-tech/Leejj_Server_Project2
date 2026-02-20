@@ -1,4 +1,4 @@
-package com.busanit501.leejj_server_project2;
+package com.busanit501.leejj_server_project2.dao;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

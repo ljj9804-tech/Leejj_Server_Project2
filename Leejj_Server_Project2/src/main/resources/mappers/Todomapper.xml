@@ -3,9 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--    참조 복사 이용하기-->
-<mapper namespace="com.busanit501.leejj_server_project2.springex_new_0219_keep.mapper.Todomapper">
+<mapper namespace="com.busanit501.leejj_server_project2.springex_new_0219_keep.mapper.TodoMapper">
 
     <select id="getTime" resultType="string">
         select now()
     </select>
+    <!--    여러 개의 sql 문장을 여기에 등록할 예정-->
+    <!--    insert 추가 작업 -->
+    <!--    TodoMapper 인터페이스 안에 있는 메서드이름과 동일-->
+    <insert id="insert">
+        insert into tbl_todo (title, dueDate, writer) values ( #{title}, #{dueDate}, #{writer})
+    </insert>
 </mapper>
