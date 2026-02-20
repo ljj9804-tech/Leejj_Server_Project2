@@ -16,12 +16,12 @@ public enum _0209_4_MapperUtil {
         modelMapper = new ModelMapper();
         // 모델 맵퍼 사용하기 위한 , 기본 설정, (초기설정)한번만 설정 후, 재사용.
         this.modelMapper.getConfiguration()
-                // dto <-> vo 클래스의 멤버의 일치 여부를 체크함.
-                .setFieldMatchingEnabled(true)
-                // 접근은 private 까지 가능하게
-                .setFieldAccessLevel(Configuration.AccessLevel.PRIVATE)
-                // 매칭시, 검사시, 엄격하게 검사함.
-                .setMatchingStrategy(MatchingStrategies.STRICT);
+            // dto <-> vo 클래스의 멤버의 일치 여부를 체크함.
+            .setFieldMatchingEnabled(true)
+            // 접근은 private 까지 가능하게
+            .setFieldAccessLevel(Configuration.AccessLevel.PRIVATE)
+            // 매칭시, 검사시, 엄격하게 검사함.
+            .setMatchingStrategy(MatchingStrategies.STRICT);
     }
     // 외부에서, 해당 기능을 쉽게 이용하기 위해서, 메서드를 만들기.
     // 사용법: _0204_3_MapperUtil.INSTANCE.get()
