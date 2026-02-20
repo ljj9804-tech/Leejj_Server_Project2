@@ -28,3 +28,11 @@
 10:30:46.119 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-20 10:30:46
 11:40:01.924 [Test worker] INFO  com.busanit501.leejj_server_project2.springex_new_0219_keep.service.TodoServiceImpl-서비스 작업: insert 기능 작업중. 
 11:40:01.947 [Test worker] INFO  com.busanit501.leejj_server_project2.springex_new_0219_keep.service.TodoServiceImpl-서비스 작업: insert 기능 변환된 todoVO : TodoVO(tno=null, title=오늘 점심 뭐 먹죠2?, dueDate=2026-02-20, finished=false, writer=이상용2)
+17:09:46.804 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-TodoVO(tno=29, title=리스트 테스트, dueDate=2026-02-21, finished=false, writer=김꼬질)
+17:09:46.804 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-TodoVO(tno=28, title=오늘 점심 뭐 먹죠2?, dueDate=2026-02-20, finished=false, writer=이상용2)
+17:09:46.804 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-TodoVO(tno=27, title=오늘 점심 서브웨이, dueDate=2026-02-20, finished=false, writer=김꼬질)
+17:09:46.805 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-TodoVO(tno=26, title=testInsert, dueDate=2026-02-20, finished=false, writer=이진주)
+17:09:46.805 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-TodoVO(tno=25, title=저녁 먹기, dueDate=2026-02-11, finished=false, writer=null)
+17:09:46.805 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-TodoVO(tno=22, title=글쓰기_테스트_1, dueDate=2026-02-11, finished=true, writer=null)
+17:09:46.805 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-TodoVO(tno=20, title=수정_테스트_2, dueDate=2026-02-11, finished=true, writer=null)
+17:19:25.566 [Test worker] INFO  com.busanit501.leejj_server_project2.mapper.TodoMapperTests-시간 확인으로 마이바티스 임시 연결 확인 : 2026-02-20 17:19:25

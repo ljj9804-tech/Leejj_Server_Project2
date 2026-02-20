@@ -6,6 +6,9 @@ Time: 오후 2:18
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <html>
 <head>
     <!-- Required meta tags -->
@@ -62,24 +65,41 @@ To change this template use File | Settings | File Templates.
                     </div>
                     <div class="card-body">
                         <form action="/todo2/register" method="post">
-                            <div>
-                                Title: <input type="text" name="title" placeholder="todo 제목을 입력해주세요">
+                            <%-- 부트스트랩 이용중이고, 폼 컨트롤 하나씩 적용해보기.--%>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Title:</span>
+                                <input class="form-control" type="text" name="title" placeholder="todo 제목을 입력해주세요">
                             </div>
-                            <div>
-                                DueDate: <input type="date" name="dueDate">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">DueDate: </span>
+                                <input class="form-control" type="date" name="dueDate">
                             </div>
-                            <div>
-                                Writer: <input type="text" name="writer">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"> Writer: </span>
+                                <input class="form-control" type="text" name="writer">
                             </div>
-                            <div>
-                                Finished: <input type="checkbox" name="finished">
+                            <div class="form-check form-check-reverse mb-3">
+                                <span class="form-check-label"> Finished: </span>
+                                <input class="form-check-input" type="checkbox" name="finished">
                             </div>
+                            <%-- <div class="form-check mb-3">--%>
+                            <%-- <input class="form-check-input" type="checkbox" value="" id="checkDefault">--%>
+                            <%-- <label class="form-check-label" for="checkDefault">--%>
+                            <%-- Default checkbox--%>
+                            <%-- </label>--%>
+                            <%-- </div>--%>
                             <div>
-                                <button type="reset">초기화</button>
-                                <button type="submit">등록하기</button>
+                                <button class="btn btn-secondary" type="reset">초기화</button>
+                                <button class="btn btn-primary" type="submit">등록하기</button>
                             </div>
                         </form>
-                    </div>
+                        <script>
+                            const serverValidResult = {}
+                            <c:forEach items="${errors}" var="error">
+                            serverValidResult[`${error.getField()}`] = `${error.defaultMessage}`
+                            </c:forEach>
+                            console.log("유효성 오류가 난 부분들 : " , serverValidResult)
+                        </script>
                 </div>
             </div>
         </div>
@@ -100,6 +120,7 @@ To change this template use File | Settings | File Templates.
             </footer>
         </div>
     </div>
+</div>
 </div>
 <h1>부트스트랩 적용, register 화면</h1>
 
