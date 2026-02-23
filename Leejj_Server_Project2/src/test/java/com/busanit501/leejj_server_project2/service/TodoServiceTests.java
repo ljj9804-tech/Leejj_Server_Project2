@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Log4j2 // 로그를 기록 하는데, 어떤 기준으로 하나요? 로그레벨
 // info, debug , warning
@@ -36,5 +37,34 @@ public class TodoServiceTests {
                 .build();
         todoService.register(todoDTO);
 }
+
+    @Test
+    public void testGetAll() {
+        List<TodoDTO> dtoList = todoService.getAll();
+        dtoList.forEach(dto ->log.info(dto));
+    }
+
+    @Test
+    public void testGetOne() {
+        TodoDTO todoDTO = todoService.getOne(25L);
+        log.info(todoDTO);
+    }
+
+    @Test
+    public void testDeleteOne(){
+        todoService.remove(25L);
+    }
+
+    @Test
+    public void testUpdateService() {
+        TodoDTO todoDTO = TodoDTO.builder()
+                .tno(30L)
+                .title("log.info 확인용 수정 테스트")
+                .dueDate(LocalDate.of(2026, 2, 27))
+                .finished(true)
+                .build();
+        todoService.update(todoDTO);
+        log.info(todoDTO);
+    }
 
 }

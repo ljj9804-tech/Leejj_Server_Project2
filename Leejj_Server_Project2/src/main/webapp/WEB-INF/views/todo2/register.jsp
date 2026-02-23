@@ -29,7 +29,7 @@ To change this template use File | Settings | File Templates.
         <div class="col">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <a class="navbar-brand" href="/todo2/list">Navbar</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -37,7 +37,7 @@ To change this template use File | Settings | File Templates.
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="/todo2/register">글쓰기</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Features</a>
@@ -66,28 +66,23 @@ To change this template use File | Settings | File Templates.
                     <div class="card-body">
                         <form action="/todo2/register" method="post">
                             <%-- 부트스트랩 이용중이고, 폼 컨트롤 하나씩 적용해보기.--%>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">Title:</span>
-                                <input class="form-control" type="text" name="title" placeholder="todo 제목을 입력해주세요">
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">DueDate: </span>
-                                <input class="form-control" type="date" name="dueDate">
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text"> Writer: </span>
-                                <input class="form-control" type="text" name="writer">
-                            </div>
-                            <div class="form-check form-check-reverse mb-3">
-                                <span class="form-check-label"> Finished: </span>
-                                <input class="form-check-input" type="checkbox" name="finished">
-                            </div>
-                            <%-- <div class="form-check mb-3">--%>
-                            <%-- <input class="form-check-input" type="checkbox" value="" id="checkDefault">--%>
-                            <%-- <label class="form-check-label" for="checkDefault">--%>
-                            <%-- Default checkbox--%>
-                            <%-- </label>--%>
-                            <%-- </div>--%>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Title:</span>
+                                    <input class="form-control" type="text" name="title" placeholder="todo 제목을 입력해주세요">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">DueDate: </span>
+                                    <input class="form-control" type="date" name="dueDate">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text"> Writer:  </span>
+                                    <input class="form-control" type="text" name="writer">
+                                </div>
+                                <div class="form-check mb-3">
+                                    <span class="form-check-label">  Finished:  </span>
+                                    <input class="form-check-input" type="checkbox" name="finished">
+                                </div>
+
                             <div>
                                 <button class="btn btn-secondary" type="reset">초기화</button>
                                 <button class="btn btn-primary" type="submit">등록하기</button>

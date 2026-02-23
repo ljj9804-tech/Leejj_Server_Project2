@@ -45,5 +45,29 @@ public class TodoMapperTests {
         List<TodoVO> voList = todoMapper.selectAll();
         voList.forEach(vo -> log.info(vo));
     }
+
+    @Test
+    public void testselectOne() {
+        TodoVO todoVO = todoMapper.selectOne(29L);
+        log.info(todoVO);
+    }
+
+    @Test
+    public void testDeleteOne(){
+        todoMapper.delete(33L);
+    }
+
+    @Test
+    public void testUpdate(){
+        TodoVO todoVO = TodoVO.builder()
+                        .tno(20L)
+                        .title("수정된 제목_테스트")
+                        .dueDate(LocalDate.of(2026,02,25))
+                        .finished(true)
+                        .build();
+        todoMapper.update(todoVO);
+        TodoVO result = todoMapper.selectOne(20L);
+        log.info("수정 후 데이터:" + result);
+    }
 }
 

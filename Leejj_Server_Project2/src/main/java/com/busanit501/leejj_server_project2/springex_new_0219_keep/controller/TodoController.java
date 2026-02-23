@@ -6,6 +6,7 @@ import com.busanit501.leejj_server_project2.springex_new_0219_keep.service.TodoS
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.List;
+
 
 @Controller
 // http://localhost:8080/todo2/ 관련된 업무는 내가 처리할게.
@@ -27,8 +30,36 @@ public class TodoController {
     // 뷰 리졸버가 연결되어서,
     // todo2/list -> WEN-INF/views/todo2/list.jsp 연결 설정됨.
     @RequestMapping("/list")
-    public void list() {
-        log.info("todo list...");
+    public void list(Model model) {
+        log.info("todo2 list...");
+        List<TodoDTO> dtoList = todoService.getAll();
+        // 서버 -> 화면에 데이터 목록들을 전달. 박스 이름 : dtoList, 내용물: DB에서 받아온 목록들
+        model.addAttribute("dtoList",dtoList);
+    }
+
+    @GetMapping({"/read", "/modify"})
+    public void read(Long tno,Model model) {
+        log.info("todo2 read...");
+        TodoDTO todoDTO = todoService.getOne(tno);
+        // 서버 -> 화면에 데이터 목록들을 전달. 박스 이름 : dtoList, 내용물: DB에서 받아온 목록들
+        model.addAttribute("dto",todoDTO);
+    }
+
+    @PostMapping("/update")
+    public String update(TodoDTO todoDTO, RedirectAttributes redirectAttributes){
+        log.info("수정 포스트 처리 작업중");
+        todoService.update(todoDTO);
+        redirectAttributes.addFlashAttribute("result", "modified");
+        return "redirect:/todo2/list";
+    }
+
+
+    @PostMapping("/delete")
+    public String delete(Long tno, RedirectAttributes redirectAttributes) {
+        log.info("삭제 포스트 처리 작업 ");
+        log.info("삭제할 tno 번호 확인 : " + tno);
+        todoService.remove(tno);
+        return "redirect:/todo2/list";
     }
 
     //    @RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -36,14 +67,14 @@ public class TodoController {
     // 뷰 리졸버가 연결되어서,
     // todo2/list -> WEN-INF/views/todo2/register.jsp 연결 설정됨.
     public void getRegister() {
-        log.info("todo register..get");
+        log.info("todo2 register..get");
     }
 
     @PostMapping("/register")
     // 유효성 체크시, 주의사항, !) @Valid TodoDTO todoDTO, BindingResult bindingResult, 순서 주의!!!
     public String postRegister(@Valid TodoDTO todoDTO, BindingResult bindingResult,
                                RedirectAttributes redirectAttributes) {
-        log.info("todo register..post");
+        log.info("todo2 register..post");
 
 
         // 유효성 체크

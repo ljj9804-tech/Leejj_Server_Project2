@@ -1,8 +1,8 @@
 package com.busanit501.leejj_server_project2.springex_new_0219_keep.service;
 
 
-import com.busanit501.leejj_server_project2.springex_new_0219_keep.dto.TodoDTO;
 import com.busanit501.leejj_server_project2.springex_new_0219_keep.domain.TodoVO;
+import com.busanit501.leejj_server_project2.springex_new_0219_keep.dto.TodoDTO;
 import com.busanit501.leejj_server_project2.springex_new_0219_keep.mapper.TodoMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -35,5 +35,26 @@ public class TodoServiceImpl implements TodoService{
                 .collect(Collectors.toList());
         return dtoList;
     }
+
+    @Override
+    public TodoDTO getOne(Long tno) {
+
+    TodoVO todoVO = todoMapper.selectOne(tno);
+    TodoDTO todoDTO = modelMapper.map(todoVO, TodoDTO.class);
+    return todoDTO;
+    }
+
+    @Override
+    public void remove(Long tno) {
+        todoMapper.delete(tno);
+    }
+
+    @Override
+    public void update(TodoDTO todoDTO) {
+        log.info("서비스 계층에서 update 실행: " + todoDTO);
+        TodoVO todoVO = modelMapper.map(todoDTO, TodoVO.class);
+        todoMapper.update(todoVO);
+    }
+
 
 }

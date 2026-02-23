@@ -12,11 +12,28 @@
     <!--    insert 추가 작업 -->
     <!--    TodoMapper 인터페이스 안에 있는 메서드이름과 동일-->
     <insert id="insert">
-        insert into tbl_todo (title, dueDate, writer) values ( #{title}, #{dueDate}, #{writer})
+        insert into tbl_todo (title, dueDate, writer,finished) values ( #{title}, #{dueDate}, #{writer}, #{finished})
     </insert>
 
     <select id="selectAll" resultType="com.busanit501.leejj_server_project2.springex_new_0219_keep.domain.TodoVO">
         select * from tbl_todo order by tno desc
     </select>
+
+    <select id="selectOne" resultType="com.busanit501.leejj_server_project2.springex_new_0219_keep.domain.TodoVO">
+        select * from tbl_todo where tno = #{ton}
+    </select>
+
+    <delete id="delete">
+        delete from tbl_todo where tno = #{tno}
+    </delete>
+
+    <update id="update">
+        update tbl_todo
+        set title = #{title},
+            dueDate = #{dueDate},
+            finished = #{finished}
+        where tno = #{tno}
+    </update>
+
 
 </mapper>
