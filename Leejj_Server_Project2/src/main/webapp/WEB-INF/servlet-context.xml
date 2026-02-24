@@ -37,6 +37,7 @@
         <property name="formatters">
             <set>
                 <bean class="com.busanit501.leejj_server_project2.springex_new_0219_keep.controller.formatter.LocalDateFormatter"/>
+                <bean class="com.busanit501.leejj_server_project2.springex_new_0219_keep.controller.formatter.CheckboxFormatter"/>
             </set>
         </property>
     </bean>

@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.Future;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
@@ -19,7 +19,7 @@ public class TodoDTO {
     @NotBlank
     private String title;
 
-    @Future
+    @FutureOrPresent
     private LocalDate dueDate;
 
     @NotBlank

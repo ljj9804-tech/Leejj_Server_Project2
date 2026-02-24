@@ -48,6 +48,7 @@ public class TodoController {
     @PostMapping("/update")
     public String update(TodoDTO todoDTO, RedirectAttributes redirectAttributes){
         log.info("수정 포스트 처리 작업중");
+
         todoService.update(todoDTO);
         redirectAttributes.addFlashAttribute("result", "modified");
         return "redirect:/todo2/list";

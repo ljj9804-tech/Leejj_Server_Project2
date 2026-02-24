@@ -123,7 +123,8 @@
                                 formObj.action = "/todo2/update";
                                 formObj.method = "post";
                                 formObj.submit();
-                            }, false);
+                                }, false
+                            )
                         </script>
                     </div>
                 </div>
