@@ -2,6 +2,8 @@ package com.busanit501.leejj_server_project2.springex_new_0219_keep.service;
 
 
 import com.busanit501.leejj_server_project2.springex_new_0219_keep.domain.TodoVO;
+import com.busanit501.leejj_server_project2.springex_new_0219_keep.dto.PageRequestDTO;
+import com.busanit501.leejj_server_project2.springex_new_0219_keep.dto.PageResponseDTO;
 import com.busanit501.leejj_server_project2.springex_new_0219_keep.dto.TodoDTO;
 import com.busanit501.leejj_server_project2.springex_new_0219_keep.mapper.TodoMapper;
 import lombok.RequiredArgsConstructor;
@@ -54,6 +56,22 @@ public class TodoServiceImpl implements TodoService{
         log.info("서비스 계층에서 update 실행: " + todoDTO);
         TodoVO todoVO = modelMapper.map(todoDTO, TodoVO.class);
         todoMapper.update(todoVO);
+    }
+
+    @Override
+    public PageResponseDTO<TodoDTO> getList(PageRequestDTO pageRequestDTO) {
+        List<TodoVO> voList = todoMapper.selectList(pageRequestDTO);
+        List<TodoDTO> dtoList = voList.stream().map(vo -> modelMapper.map(vo, TodoDTO.class))
+                .collect(Collectors.toList());
+
+        int total = todoMapper.getCount(pageRequestDTO);
+
+        PageResponseDTO<TodoDTO> pageResponseDTO = PageResponseDTO.<TodoDTO>withAll()
+                .dtoList(dtoList)
+                .total(total)
+                .pageRequestDTO(pageRequestDTO)
+                .build();
+        return pageResponseDTO;
     }
 
 

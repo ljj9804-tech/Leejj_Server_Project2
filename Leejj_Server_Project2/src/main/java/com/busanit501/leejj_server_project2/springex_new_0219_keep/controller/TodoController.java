@@ -1,6 +1,8 @@
 package com.busanit501.leejj_server_project2.springex_new_0219_keep.controller;
 
 
+import com.busanit501.leejj_server_project2.springex_new_0219_keep.dto.PageRequestDTO;
+import com.busanit501.leejj_server_project2.springex_new_0219_keep.dto.PageResponseDTO;
 import com.busanit501.leejj_server_project2.springex_new_0219_keep.dto.TodoDTO;
 import com.busanit501.leejj_server_project2.springex_new_0219_keep.service.TodoService;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
-import java.util.List;
 
 
 @Controller
@@ -29,16 +30,36 @@ public class TodoController {
     // http://localhost:8080/todo2/list
     // 뷰 리졸버가 연결되어서,
     // todo2/list -> WEN-INF/views/todo2/list.jsp 연결 설정됨.
+
+    //페이징 처리 전
+//    @RequestMapping("/list")
+//    public void list(Model model) {
+//        log.info("todo2 list...");
+//        List<TodoDTO> dtoList = todoService.getAll();
+//        // 서버 -> 화면에 데이터 목록들을 전달. 박스 이름 : dtoList, 내용물: DB에서 받아온 목록들
+//        model.addAttribute("dtoList",dtoList);
+//    }
+
+    //페이징 처리 후
     @RequestMapping("/list")
-    public void list(Model model) {
-        log.info("todo2 list...");
-        List<TodoDTO> dtoList = todoService.getAll();
-        // 서버 -> 화면에 데이터 목록들을 전달. 박스 이름 : dtoList, 내용물: DB에서 받아온 목록들
-        model.addAttribute("dtoList",dtoList);
+    public void list(@Valid PageRequestDTO pageRequestDTO, BindingResult bindingResult,
+                     Model model) {
+        log.info("pageRequestDTO : " + pageRequestDTO);
+        log.info("todo2 list...페이징 처리가 된 리스트 조회");
+
+        if(bindingResult.hasErrors()) {
+// 잠시 대기. 추후 작업 할 예정.
+            pageRequestDTO = PageRequestDTO.builder().build();
+        }
+
+        PageResponseDTO<TodoDTO> responseDTO = todoService.getList(pageRequestDTO);
+// 서버 -> 화면에 데이터 목록들을 전달. 박스 이름 : responseDTO, 내용물: DB에서 받아온 목록들
+        model.addAttribute("responseDTO",responseDTO);
     }
 
     @GetMapping({"/read", "/modify"})
-    public void read(Long tno,Model model) {
+//    public void read(Long tno,Model model) {
+    public void read(Long tno,PageRequestDTO pageRequestDTO,Model model) {
         log.info("todo2 read...");
         TodoDTO todoDTO = todoService.getOne(tno);
         // 서버 -> 화면에 데이터 목록들을 전달. 박스 이름 : dtoList, 내용물: DB에서 받아온 목록들
@@ -46,20 +67,30 @@ public class TodoController {
     }
 
     @PostMapping("/update")
-    public String update(TodoDTO todoDTO, RedirectAttributes redirectAttributes){
+    public String update(TodoDTO todoDTO, PageRequestDTO pageRequestDTO, RedirectAttributes redirectAttributes){
         log.info("수정 포스트 처리 작업중");
 
         todoService.update(todoDTO);
+
+        redirectAttributes.addAttribute("page",pageRequestDTO.getPage()); // 현재 보고 있는 페이지로 이동.
+        redirectAttributes.addAttribute("size",pageRequestDTO.getSize());
+
         redirectAttributes.addFlashAttribute("result", "modified");
         return "redirect:/todo2/list";
     }
 
 
     @PostMapping("/delete")
-    public String delete(Long tno, RedirectAttributes redirectAttributes) {
+    public String delete(Long tno, PageRequestDTO pageRequestDTO, RedirectAttributes redirectAttributes) {
         log.info("삭제 포스트 처리 작업 ");
         log.info("삭제할 tno 번호 확인 : " + tno);
         todoService.remove(tno);
+
+        // 서버에서 -> 화면으로 데이터를 전달시, 쿼리 스트링으로 전달하는 방법.
+//        redirectAttributes.addAttribute("page",1);// 1페이지로 이동
+        redirectAttributes.addAttribute("page",pageRequestDTO.getPage()); // 현재 보고 있는 페이지로 이동.
+        redirectAttributes.addAttribute("size",pageRequestDTO.getSize());
+
         return "redirect:/todo2/list";
     }
 
@@ -92,5 +123,6 @@ public class TodoController {
         log.info(" 유효성 통과한 데이터 todoDTO : " + todoDTO);
         return "redirect:/todo2/list";
     }
+
 }
 

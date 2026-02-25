@@ -2,6 +2,7 @@ package com.busanit501.leejj_server_project2.mapper;
 
 
 import com.busanit501.leejj_server_project2.springex_new_0219_keep.domain.TodoVO;
+import com.busanit501.leejj_server_project2.springex_new_0219_keep.dto.PageRequestDTO;
 import com.busanit501.leejj_server_project2.springex_new_0219_keep.mapper.TodoMapper;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
@@ -69,5 +70,50 @@ public class TodoMapperTests {
         TodoVO result = todoMapper.selectOne(20L);
         log.info("수정 후 데이터:" + result);
     }
+
+    @Test
+    public void testSelectList() {
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
+                .page(1)
+                .size(10)
+                .build();
+
+        List<TodoVO> voList = todoMapper.selectList(pageRequestDTO);
+        voList.forEach(vo -> log.info(vo));
+    }
+
+    @Test
+    public void testSelectListCount() {
+
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
+                .page(1)
+                .size(10)
+                .build();
+
+        int resultCount = todoMapper.getCount(pageRequestDTO);
+        log.info("전체 갯수 : " + resultCount);
+    }
+
+    //타입에 따른 검색 연습
+    @Test
+    public void testSelectSearch(){
+        //준비물: 검색어와 타입
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
+                .page(1)
+                .size(10)
+                .types(new String[]{"t","w"})
+                .keyword("서치")
+                .finished(true)
+                .from(LocalDate.of(2026,02,01))
+                .to(LocalDate.of(2026,03,20))
+                .build();
+
+        List<TodoVO> voList = todoMapper.selectList(pageRequestDTO);
+        voList.forEach(vo->log.info(vo));
+
+        // 전체 갯수
+        log.info(todoMapper.getCount(pageRequestDTO));
+    }
+
 }
 
